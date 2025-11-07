@@ -13,16 +13,16 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/projekt-p
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(() => {
-  console.log('Datenbank verbunden');
+  console.log('Database connected successfully');
 }).catch(err => {
-  console.error('Datenbankverbindung fehlgeschlagen:', err);
+  console.error('Database connection failed:', err);
   process.exit(1); // Exit the process on failure
 });
 
 app.get('/', (req, res) => {
-  res.send('Willkommen zum Projekt Planer Backend!');
+  res.send('Welcome to the Project Planner Backend!');
 });
 
 app.listen(PORT, () => {
-  console.log(`Server läuft auf Port: ${PORT}`);
+  console.log(`Server running on port: ${PORT}`);
 });
