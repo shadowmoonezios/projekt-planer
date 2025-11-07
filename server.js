@@ -16,6 +16,7 @@ mongoose.connect('mongodb://localhost:27017/projekt-planer', {
   console.log('Datenbank verbunden');
 }).catch(err => {
   console.error('Datenbankverbindung fehlgeschlagen:', err);
+  process.exit(1); // Exit the process on failure
 });
 
 app.get('/', (req, res) => {
